@@ -216,7 +216,7 @@
     } else {
       Promise.all([
         fetch('projects/index.json').then(r => r.json()),
-        fetch(`projects/${id}.md`).then(r => {
+        fetch(`projects/${id}/index.md`).then(r => {
           if (!r.ok) throw new Error('not found');
           return r.text();
         })
@@ -230,6 +230,22 @@
         document.getElementById('root').innerHTML =
           '<div class="state-msg">Entry not found. <a href="index.html">Go back</a>.</div>';
       });
+    }
+
+    // Rewrite relative URLs in markdown (images, links) to be rooted at the project folder
+    function configureMarked(projectId) {
+      const base = `projects/${projectId}/`;
+      const renderer = new marked.Renderer();
+      const isAbsolute = s => /^https?:\/\/|^\//.test(s);
+      renderer.image = ({ href, title, text }) => {
+        const src = isAbsolute(href) ? href : base + href;
+        return `<img src="${src}" alt="${text}"${title ? ` title="${title}"` : ''}>`;
+      };
+      renderer.link = ({ href, title, text }) => {
+        const url = isAbsolute(href) ? href : base + href;
+        return `<a href="${url}"${title ? ` title="${title}"` : ''}>${text}</a>`;
+      };
+      marked.use({ renderer });
     }
 
     function parseMath(markdown) {
@@ -257,6 +273,7 @@
     }
 
     function render(meta, rawMarkdown) {
+      configureMarked(id);
       const { markdown, blocks } = parseMath(rawMarkdown);
       let html = marked.parse(markdown);
       html = restoreMath(html, blocks);

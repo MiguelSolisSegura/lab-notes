@@ -53,7 +53,6 @@ Describe your results and key findings. Include images or GIFs if useful — jus
 ```
 ![my result](projects/assets/my-result.gif)
 ```
-![my result](projects/assets/my-result.gif)
 
 ## What's Next
 

@@ -1,14 +1,14 @@
 [
   {
     "id": "01-placeholder",
-    "title": "Change me to your project title",
+    "title": "Change me to your project",
     "date": "2026-06-28",
     "tags": ["Robotics", "Python", "Kinematics"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Strider_Linkage_Robot_Climbing.gif/330px-Strider_Linkage_Robot_Climbing.gif"
   },
   {
     "id": "02-placeholder",
-    "title": "Inverse Kinematics from Scratch",
+    "title": "Inverse Kinematics from",
     "date": "2026-06-28",
     "tags": ["Robotics", "Python", "Kinematics"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Extra_Simple_Walker_3D_Animation.gif/330px-Extra_Simple_Walker_3D_Animation.gif"
@@ -29,14 +29,21 @@
   },
   {
     "id": "05-placeholder",
-    "title": "Inverse Kinematics from Scratch",
+    "title": "Dummy Project",
     "date": "2026-06-28",
     "tags": ["Robotics", "Python", "Kinematics"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TrotBot_-_1_Corner_of_12_Leg_Robot.gif/250px-TrotBot_-_1_Corner_of_12_Leg_Robot.gif"
   },
   {
     "id": "06-placeholder",
-    "title": "Inverse Kinematics from Scratch",
+    "title": "Dummy Project",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TrotBot_-_1_Corner_of_12_Leg_Robot.gif/250px-TrotBot_-_1_Corner_of_12_Leg_Robot.gif"
+  },
+  {
+    "id": "07-dummy",
+    "title": "Dummy Project",
     "date": "2026-06-28",
     "tags": ["Robotics", "Python", "Kinematics"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/ExtraSimpleWalkerWithSpeed.gif/330px-ExtraSimpleWalkerWithSpeed.gif"
