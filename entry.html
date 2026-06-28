@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Loading… — Physical AI Lab Notes</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
+
+  <!-- Syntax highlighting (dark) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <!-- Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!-- Math -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #111110;
+      --surface: #1c1c1a;
+      --border: #2a2a26;
+      --text: #e8e8e2;
+      --text-muted: #66665e;
+      --accent: #76b900;
+      --content-width: 720px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+    }
+
+    .topbar, article, footer { position: relative; z-index: 1; }
+
+    /* ── Top bar ── */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(17, 17, 16, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.15s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    /* ── Cover image ── */
+    .cover {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+      display: block;
+      background: #252520;
+    }
+
+    /* ── Article ── */
+    article {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 3rem 2rem 6rem;
+    }
+
+    .entry-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+
+    .entry-date {
+      font-size: 0.8rem;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      background: rgba(123, 154, 247, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(123, 154, 247, 0.25);
+      letter-spacing: 0.04em;
+    }
+
+    h1.entry-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── Markdown content typography ── */
+    .entry-body { line-height: 1.8; font-size: 1rem; }
+
+    .entry-body h2 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 2.5rem 0 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .entry-body h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 2rem 0 0.6rem;
+    }
+
+    .entry-body p { margin-bottom: 1.2rem; }
+
+    .entry-body ul,
+    .entry-body ol { margin: 0 0 1.2rem 1.5rem; }
+
+    .entry-body li { margin-bottom: 0.3rem; }
+
+    .entry-body a { color: var(--accent); }
+
+    .entry-body img {
+      max-width: 100%;
+      border-radius: 8px;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    .entry-body blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 0 0.5rem 1.2rem;
+      color: var(--text-muted);
+      margin: 1.5rem 0;
+      font-style: italic;
+    }
+
+    /* ── Code blocks ── */
+    .entry-body pre {
+      background: #1a1a18;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 1.3rem;
+      overflow-x: auto;
+      margin: 1.4rem 0;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .entry-body code {
+      font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 0.85em;
+      background: #252520;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+    }
+
+    .entry-body pre code { background: none; padding: 0; font-size: inherit; }
+
+    /* ── Math ── */
+    .katex-display {
+      overflow-x: auto;
+      padding: 0.5rem 0;
+      margin: 1.4rem 0;
+    }
+
+    /* ── States ── */
+    .state-msg {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <a class="back-link" href="index.html">&#8592; Back</a>
+  </div>
+
+  <div id="root"><div class="state-msg">Loading…</div></div>
+
+  <script>
+    // ── Entry rendering ──
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+
+    if (!id) {
+      document.getElementById('root').innerHTML =
+        '<div class="state-msg">No project specified. <a href="index.html">Go back</a>.</div>';
+    } else {
+      Promise.all([
+        fetch('projects/index.json').then(r => r.json()),
+        fetch(`projects/${id}.md`).then(r => {
+          if (!r.ok) throw new Error('not found');
+          return r.text();
+        })
+      ])
+      .then(([projects, markdown]) => {
+        const meta = projects.find(p => p.id === id) || {};
+        document.title = (meta.title || id) + ' — Physical AI Lab Notes';
+        render(meta, markdown);
+      })
+      .catch(() => {
+        document.getElementById('root').innerHTML =
+          '<div class="state-msg">Entry not found. <a href="index.html">Go back</a>.</div>';
+      });
+    }
+
+    function parseMath(markdown) {
+      const blocks = [];
+      markdown = markdown.replace(/\$\$([\s\S]*?)\$\$/g, (_, math) => {
+        blocks.push({ type: 'display', math });
+        return `@@MATH${blocks.length - 1}@@`;
+      });
+      markdown = markdown.replace(/\$([^\n$]+?)\$/g, (_, math) => {
+        blocks.push({ type: 'inline', math });
+        return `@@MATH${blocks.length - 1}@@`;
+      });
+      return { markdown, blocks };
+    }
+
+    function restoreMath(html, blocks) {
+      blocks.forEach((b, i) => {
+        const rendered = katex.renderToString(b.math, {
+          displayMode: b.type === 'display',
+          throwOnError: false
+        });
+        html = html.replace(`@@MATH${i}@@`, rendered);
+      });
+      return html;
+    }
+
+    function render(meta, rawMarkdown) {
+      const { markdown, blocks } = parseMath(rawMarkdown);
+      let html = marked.parse(markdown);
+      html = restoreMath(html, blocks);
+
+      const date = meta.date
+        ? new Date(meta.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+        : '';
+      const tags = (meta.tags || []).map(t => `<span class="tag">${t}</span>`).join('');
+
+      document.getElementById('root').innerHTML = `
+        ${meta.image ? `<img class="cover" src="${meta.image}" alt="${meta.title || ''}" />` : ''}
+        <article>
+          <div class="entry-meta">
+            ${date ? `<span class="entry-date">${date}</span>` : ''}
+            ${tags}
+          </div>
+          <h1 class="entry-title">${meta.title || id}</h1>
+          <div class="entry-body">${html}</div>
+        </article>
+      `;
+
+      document.querySelectorAll('pre code').forEach(el => hljs.highlightElement(el));
+    }
+  </script>
+
+</body>
+</html>

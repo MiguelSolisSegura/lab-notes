@@ -1,0 +1,44 @@
+[
+  {
+    "id": "01-placeholder",
+    "title": "Change me to your project title",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Strider_Linkage_Robot_Climbing.gif/330px-Strider_Linkage_Robot_Climbing.gif"
+  },
+  {
+    "id": "02-placeholder",
+    "title": "Inverse Kinematics from Scratch",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Extra_Simple_Walker_3D_Animation.gif/330px-Extra_Simple_Walker_3D_Animation.gif"
+  },
+  {
+    "id": "03-placeholder",
+    "title": "Inverse Kinematics from Scratch",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Time-lapse_of_first_movement_of_European_Robotic_Arm.gif/330px-Time-lapse_of_first_movement_of_European_Robotic_Arm.gif"
+  },
+  {
+    "id": "04-placeholder",
+    "title": "Inverse Kinematics from Scratch",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/PIA24098-MarsInSightArm-Animation-20201016.gif/250px-PIA24098-MarsInSightArm-Animation-20201016.gif"
+  },
+  {
+    "id": "05-placeholder",
+    "title": "Inverse Kinematics from Scratch",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TrotBot_-_1_Corner_of_12_Leg_Robot.gif/250px-TrotBot_-_1_Corner_of_12_Leg_Robot.gif"
+  },
+  {
+    "id": "06-placeholder",
+    "title": "Inverse Kinematics from Scratch",
+    "date": "2026-06-28",
+    "tags": ["Robotics", "Python", "Kinematics"],
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/ExtraSimpleWalkerWithSpeed.gif/330px-ExtraSimpleWalkerWithSpeed.gif"
+  }
+]
