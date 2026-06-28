@@ -40,12 +40,5 @@
     "date": "2026-06-28",
     "tags": ["Robotics", "Python", "Kinematics"],
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/TrotBot_-_1_Corner_of_12_Leg_Robot.gif/250px-TrotBot_-_1_Corner_of_12_Leg_Robot.gif"
-  },
-  {
-    "id": "07-dummy",
-    "title": "Dummy Project",
-    "date": "2026-06-28",
-    "tags": ["Robotics", "Python", "Kinematics"],
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/ExtraSimpleWalkerWithSpeed.gif/330px-ExtraSimpleWalkerWithSpeed.gif"
   }
 ]

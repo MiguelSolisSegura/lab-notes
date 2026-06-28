@@ -157,7 +157,7 @@
   </main>
 
   <footer>
-    <p>Miguel Solis &middot; <a href="https://github.com/MiguelSolisSegura">GitHub</a></p>
+    <p>Miguel Solis Segura &middot; <a href="https://github.com/MiguelSolisSegura">GitHub</a></p>
   </footer>
 
   <script>
@@ -165,7 +165,7 @@
     fetch('projects/index.json')
       .then(r => r.json())
       .then(projects => {
-        document.getElementById('grid').innerHTML = projects.map(p => `
+        document.getElementById('grid').innerHTML = projects.reverse().map(p => `
           <a class="card" href="entry.html?id=${p.id}">
             <div class="card-image-wrap">
               <img class="card-image" src="${p.image}" alt="${p.title}" />
